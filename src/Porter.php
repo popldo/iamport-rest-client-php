@@ -4,7 +4,7 @@ namespace Iamport;
 use Iamport\exception\IamportAuthException;
 use Iamport\exception\IamportRequestException;
 
-class Iamport
+class Porter
 {
 
     const GET_TOKEN_URL = 'https://api.iamport.kr/users/getToken';

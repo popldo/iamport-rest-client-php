@@ -2,13 +2,13 @@
 namespace Iamport\Tests;
 
 use PHPUnit\Framework\TestCase;
-use Iamport\Iamport;
+use Iamport\Porter;
 use Exception;
 
 class IamportTest extends TestCase {
 
     public function testCancel() {
-        $iamport = new Iamport('YOUR_IMP_REST_API_KEY', 'YOUR_IMP_REST_API_SECRET');
+        $iamport = new Porter('YOUR_IMP_REST_API_KEY', 'YOUR_IMP_REST_API_SECRET');
 
         #3. 주문취소
         $result = $iamport->cancel(array(
@@ -43,7 +43,7 @@ class IamportTest extends TestCase {
     }
 
     public function testImportUid(){
-        $iamport = new Iamport('YOUR_IMP_REST_API_KEY', 'YOUR_IMP_REST_API_SECRET');
+        $iamport = new Porter('YOUR_IMP_REST_API_KEY', 'YOUR_IMP_REST_API_SECRET');
 
         #1. imp_uid 로 주문정보 찾기(아임포트에서 생성된 거래고유번호)
         $result = $iamport->findByImpUID('your_imp_uid'); //IamportResult 를 반환(success, data, error)
